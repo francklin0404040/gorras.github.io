@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — CAPS STORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       LOGIN SCREEN
+  ══════════════════════════════════════ -->
+  <div class="login-screen" id="login-screen">
+    <div class="login-box">
+      <div class="login-icon">🔐</div>
+      <h1><span>CAPS</span> STORE</h1>
+      <p>Panel de administración</p>
+      <div class="login-form">
+        <input type="password" id="login-password" placeholder="Contraseña"
+               autocomplete="current-password">
+        <button class="btn-login" id="btn-login">Ingresar →</button>
+        <div class="login-error" id="login-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       DASHBOARD
+  ══════════════════════════════════════ -->
+  <div id="dashboard-screen" style="display:none">
+
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="admin-logo">
+        <span>CAPS STORE</span>
+        <small>Admin Panel</small>
+      </div>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <button class="btn-refresh" id="btn-refresh">↻ Actualizar</button>
+        <button class="btn-logout" id="btn-logout">Salir</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-val accent" id="stat-nuevos">0</div>
+          <div class="stat-label">Nuevos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val warning" id="stat-proceso">0</div>
+          <div class="stat-label">En proceso</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val success" id="stat-completados">0</div>
+          <div class="stat-label">Completados</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-total">0</div>
+          <div class="stat-label">Total pedidos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val success" id="stat-ventas">$0.00</div>
+          <div class="stat-label">Ventas completadas</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="admin-filters">
+        <select id="filtro-estado">
+          <option value="all">Todos los estados</option>
+          <option value="nuevo">Nuevos</option>
+          <option value="en_proceso">En proceso</option>
+          <option value="completado">Completados</option>
+        </select>
+        <select id="filtro-entrega">
+          <option value="all">Todos los tipos</option>
+          <option value="local">Retiro en local</option>
+          <option value="delivery">Delivery propio</option>
+          <option value="empresa">Envío por empresa</option>
+        </select>
+        <span class="filter-count" id="filter-count"></span>
+      </div>
+
+      <!-- Orders -->
+      <div class="pedidos-container" id="pedidos-container">
+        <div class="admin-empty">
+          <div style="font-size:2.5rem">📋</div>
+          <h3>CARGANDO PEDIDOS</h3>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="js/productos.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
