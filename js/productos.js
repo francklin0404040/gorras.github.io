@@ -1,7 +1,7 @@
 // ====================================================
 // CONFIGURACIÓN DEL NEGOCIO — editá estos valores
 // ====================================================
-const NOMBRE_NEGOCIO   = "CAPS STORE";
+const NOMBRE_NEGOCIO   = "Planeta G";
 const WHATSAPP_NEGOCIO = "50760000000";   // con código de país, sin +
 const YAPPY_NUMERO     = "50760000000";
 const DIRECCION_LOCAL  = "Calle Principal #1, Ciudad de Panamá";
